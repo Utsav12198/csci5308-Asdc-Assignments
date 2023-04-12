@@ -1,0 +1,37 @@
+package BAD.DependencyInversion;
+
+public class Restaurant {
+
+	String Restaurant_Name;
+	String Restaurant_City;
+
+	Restaurant(String Restaurant_Name, String Restaurant_City) {
+		this.Restaurant_Name = Restaurant_Name;
+		this.Restaurant_City = Restaurant_City;
+	}
+
+	public void OrderDominosDough(Dominos d) {
+		d.orderPizzaDough(this);
+	}
+
+	public void OrderPizzaHutDough(Pizzahut p) {
+		p.orderPizzaDough(this);
+	}
+
+	public String getRestaurant_Name() {
+		return Restaurant_Name;
+	}
+
+	public void setRestaurant_Name(String restaurant_Name) {
+		Restaurant_Name = restaurant_Name;
+	}
+
+	public String getRestaurant_City() {
+		return Restaurant_City;
+	}
+
+	public void setRestaurant_City(String restaurant_City) {
+		Restaurant_City = restaurant_City;
+	}
+
+}
